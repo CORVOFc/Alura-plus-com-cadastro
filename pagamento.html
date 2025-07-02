@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pagamento.css">
+    <title>Formulário de Cadastro</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #e0f2f7; /* Azul claro de fundo */
+            color: #2c3e50; /* Texto principal em azul escuro */
+            line-height: 1.6;
+        }
+        
+        .container-principal {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        
+        .cabecalho-formulario {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .cabecalho-formulario img {
+            height: 80px;
+            margin-bottom: 15px;
+        }
+        
+        .titulo-formulario {
+            color: #1a5276; /* Título em azul mais escuro */
+            font-size: 28px;
+        }
+        
+        .cartao-formulario {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        fieldset {
+            border: 1px solid #a7d9f0; /* Borda do fieldset em azul claro */
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        legend {
+            padding: 0 10px;
+            font-weight: bold;
+            color: #1a5276; /* Legenda em azul mais escuro */
+        }
+        
+        .grupo-formulario {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .obrigatorio:after {
+            content: " *";
+            color: red;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="tel"],
+        select, 
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #a7d9f0; /* Borda dos inputs em azul claro */
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .linha {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+        
+        .coluna {
+            flex: 1;
+            padding: 0 10px;
+            min-width: 200px;
+        }
+        
+        .grupo-radio {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        
+        .opcao-radio {
+            display: flex;
+            align-items: center;
+        }
+        
+        .opcao-radio input {
+            margin-right: 5px;
+        }
+        
+        .opcoes-pagamento {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .cartao-pagamento {
+            border: 1px solid #a7d9f0; /* Borda do cartão de pagamento em azul claro */
+            border-radius: 5px;
+            padding: 15px;
+            flex: 1;
+            min-width: 120px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .cartao-pagamento:hover {
+            border-color: #3498db; /* Azul no hover */
+            background: #f0f8ff; /* Azul muito claro no hover */
+        }
+        
+        .cartao-pagamento input {
+            margin-right: 5px;
+        }
+        
+        .btn-enviar {
+            background: #3498db; /* Azul vibrante para o botão */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+        
+        .btn-enviar:hover {
+            background: #2980b9; /* Azul mais escuro no hover do botão */
+        }
+        
+        @media (max-width: 600px) {
+            .coluna {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-principal">
+        <div class="cabecalho-formulario">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZHHD0ufmK1WAiwukpR-AztrqG7AFZwJ2g_A&s" alt="Logotipo da empresa em azul e branco com ícone de cadastro">
+            <h1 class="titulo-formulario">Cadastro de Usuário</h1>
+        </div>
+        
+        <form class="cartao-formulario">
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+                
+                <div class="linha">
+                    <div class="coluna">
+                        <div class="grupo-formulario">
+                            <label for="nome" class="obrigatorio">Nome Completo</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                    </div>
+                    
+                    <div class="coluna">
+                        <div class="grupo-formulario">
+                            <label for="email" class="obrigatorio">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="linha">
+                    <div class="coluna">
+                        <div class="grupo-formulario">
+                            <label>Sexo</label>
+                            <div class="grupo-radio">
+                                <label class="opcao-radio">
+                                    <input type="radio" name="sexo" value="masculino"> Masculino
+                                </label>
+                                <label class="opcao-radio">
+                                    <input type="radio" name="sexo" value="feminino"> Feminino
+                                </label>
+                                <label class="opcao-radio">
+                                    <input type="radio" name="sexo" value="outro"> Outro
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="coluna">
+                        <div class="grupo-formulario">
+                            <label for="nascimento" class="obrigatorio">Data de Nascimento</label>
+                            <input type="date" id="nascimento" name="nascimento" required>
+                        </div>
+                    </div>
+                    
+                    <div class="coluna">
+                        <div class="grupo-formulario">
+                            <label for="cpf" class="obrigatorio">CPF</label>
+                            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Endereço</legend>
+                
+                <div class="linha">
+                    <div class="coluna">
+                        <div class="grupo-formulario">
+                            <label for="endereco" class="obrigatorio">Endereço</label>
+                            <input type="text" id="endereco" name="endereco" placeholder="Rua, número" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="linha">
+                    <div class="coluna">
+                        <div class="grupo-formulario">
+                            <label for="cidade" class="obrigatorio">Cidade</label>
+                            <input type="text" id="cidade" name="cidade" required>
+                        </div>
+                    </div>
+                    
+                    <div class="coluna">
+                        <div class="grupo-formulario">
+                            <label for="estado" class="obrigatorio">Estado</label>
+                            <select id="estado" name="estado" required>
+                                <option value="">Selecione</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="coluna">
+                        <div class="grupo-formulario">
+                            <label for="cep">CEP</label>
+                            <input type="text" id="cep" name="cep" placeholder="00000-000">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Forma de Pagamento</legend>
+                
+                <div class="opcoes-pagamento">
+                    <div class="cartao-pagamento">
+                        <label>
+                            <input type="radio" name="pagamento" value="pix"> PIX
+                        </label>
+                    </div>
+                    
+                    <div class="cartao-pagamento">
+                        <label>
+                            <input type="radio" name="pagamento" value="boleto"> Boleto Bancário
+                        </label>
+                    </div>
+                    
+                    <div class="cartao-pagamento">
+                        <label>
+                            <input type="radio" name="pagamento" value="credito"> Cartão de Crédito
+                        </label>
+                    </div>
+                    
+                    <div class="cartao-pagamento">
+                        <label>
+                            <input type="radio" name="pagamento" value="debito"> Cartão de Débito
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <button type="submit" class="btn-enviar">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>

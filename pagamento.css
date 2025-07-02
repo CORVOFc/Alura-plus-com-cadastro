@@ -1,0 +1,156 @@
+ * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #e0f2f7; /* Azul claro de fundo */
+            color: #2c3e50; /* Texto principal em azul escuro */
+            line-height: 1.6;
+        }
+        
+        .container-principal {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        
+        .cabecalho-formulario {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .cabecalho-formulario img {
+            height: 80px;
+            margin-bottom: 15px;
+        }
+        
+        .titulo-formulario {
+            color: #1a5276; /* Título em azul mais escuro */
+            font-size: 28px;
+        }
+        
+        .cartao-formulario {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        fieldset {
+            border: 1px solid #a7d9f0; /* Borda do fieldset em azul claro */
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        legend {
+            padding: 0 10px;
+            font-weight: bold;
+            color: #1a5276; /* Legenda em azul mais escuro */
+        }
+        
+        .grupo-formulario {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .obrigatorio:after {
+            content: " *";
+            color: red;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="tel"],
+        select, 
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #a7d9f0; /* Borda dos inputs em azul claro */
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .linha {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+        
+        .coluna {
+            flex: 1;
+            padding: 0 10px;
+            min-width: 200px;
+        }
+        
+        .grupo-radio {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        
+        .opcao-radio {
+            display: flex;
+            align-items: center;
+        }
+        
+        .opcao-radio input {
+            margin-right: 5px;
+        }
+        
+        .opcoes-pagamento {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .cartao-pagamento {
+            border: 1px solid #a7d9f0; /* Borda do cartão de pagamento em azul claro */
+            border-radius: 5px;
+            padding: 15px;
+            flex: 1;
+            min-width: 120px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .cartao-pagamento:hover {
+            border-color: #3498db; /* Azul no hover */
+            background: #f0f8ff; /* Azul muito claro no hover */
+        }
+        
+        .cartao-pagamento input {
+            margin-right: 5px;
+        }
+        
+        .btn-enviar {
+            background: #3498db; /* Azul vibrante para o botão */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+        
+        .btn-enviar:hover {
+            background: #2980b9; /* Azul mais escuro no hover do botão */
+        }
+        
+        @media (max-width: 600px) {
+            .coluna {
+                flex: 100%;
+            }
+        }
